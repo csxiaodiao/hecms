@@ -1,0 +1,27 @@
+en:
+  common:
+    home: Home
+    update_password: Update Password
+    logout: Logout
+    index: Index
+    list_all: List All
+    list_deleted: List Deleted
+    new: New
+    create: Create
+    show: Show
+    edit: Edit
+    save: Save
+    update: Update
+    delete: Delete
+    restore: Restore
+    upload_image: Upload Image
+    notice: Notice
+    alert: Alert
+    are_you_sure_to_delete: Are you sure to delete it?
+    are_you_sure_to_restore: Are you sure to restore it?
+    are_you_sure_to_logout: Are you sure to logout?
+    total_x_pages_y_count: Total %{x} pages, %{y} count
+    x_errors_count: '%{x} error(s) count:'
+    bool:
+      'true': 'Yes'
+      'false': 'No'

@@ -1,0 +1,19 @@
+zh-CN:
+  activerecord:
+    models:
+      category: 栏目
+    attributes:
+      category:
+        name: 栏目名
+        ename: 英文名
+        seo_title: SEO 标题
+        keywords: 关键词
+        description: 简介
+        parent_id: 父级分类
+        pinyin: 拼音
+        enabled: 启用
+        slug: 链接名
+        display_updated_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间

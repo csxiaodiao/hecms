@@ -1,0 +1,15 @@
+<% if new_path.present? && (action_name == 'index') %>
+  <%= link_to t('common.new'), new_path, class: "ui_right_floated_new_button_class" %>
+<%end%>
+<% if search_path.present? %>
+  <%= form_tag search_path, method: :get do %>
+    <%= link_to t('common.list_all'), search_path.split('?')[0], class: 'ui basic button' %>
+    <div class="ui action input" >
+      <%= text_field_tag :keyword, params[:keyword] %>
+      <button class="ui iconbutton">
+        <i class="search icon"></i>
+      </button>
+    </div>
+  <%end%>
+<%end%>
+

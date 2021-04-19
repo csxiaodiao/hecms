@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <%= title_tag %>
+    <%= csrf_meta_tags %>
+    <%#= favicon_link_tag %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+
+    <style>
+    body>.grid {
+      height: 100%;
+    }
+
+    .image {
+      margin: .15em 0em 0em 0em;
+      width: 212px;
+    }
+
+    .form {
+      padding: 15px 10px 10px 10px;
+    }
+
+    .column {
+      max-width: 450px;
+    }
+    </style>
+  <body class="<%= html_body_classes%>">
+    <%= yield %>
+    <%#= render 'notice_and_alert' %>
+  </body>
+</html>
+
+
+

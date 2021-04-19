@@ -1,0 +1,9 @@
+- if item.errors.any?
+  .ui.error.message
+    .header
+      = t('common.x_errors_count', x: item.errors.count)
+    .ui.clearing.divider
+    ul.list
+      - item.errors.full_messages.each do |msg|
+        li
+          = msg

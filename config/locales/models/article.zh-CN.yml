@@ -1,0 +1,32 @@
+zh-CN:
+  activerecord:
+    models:
+      article: 文章
+    attributes:
+      article:
+        tag_ids: 标签
+        category_ids: 栏目分类
+        title: 标题
+        category_id: 分类
+        image: 封面图
+        seo_title: SEO 标题
+        keywords: 关键词
+        description: 简介
+        content_html: 内容
+        sort: 排序
+        top: 置顶/热门
+        editer_id: 编辑
+        published_date: 发布时间
+        scheduled: 定时发布
+        deleted_at: 删除时间
+        display_updated_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间
+
+      article/editer_id:
+        editer1: 喜羊羊
+        editer2: 美羊羊
+        editer3: 懒羊羊
+        editer4: 小呆呆
+        editer5: 灰太狼

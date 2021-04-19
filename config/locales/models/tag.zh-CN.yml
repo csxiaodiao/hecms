@@ -1,0 +1,18 @@
+zh-CN:
+  activerecord:
+    models:
+      tag: 标签
+    attributes:
+      tag:
+        category_id: 分类
+        name: 标签名
+        ename: 英文标签名
+        seo_title: SEO 标题
+        keywords: 关键词
+        description: 简介
+        pingyin: 拼音
+        slug: 链接名
+        display_updated_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间

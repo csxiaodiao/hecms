@@ -1,0 +1,14 @@
+zh-CN:
+  activerecord:
+    models:
+      anchor_text: 锚文本
+    attributes:
+      anchor_text:
+        name: 锚文本名
+        link: 链接
+        star: 星标
+        times: 替换次数
+        display_updated_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间

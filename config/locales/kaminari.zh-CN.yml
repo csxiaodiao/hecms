@@ -1,0 +1,17 @@
+zh-CN:
+  views:
+    pagination:
+      first: '首页'
+      last: '末页'
+      previous: '上一页'
+      next: '下一页'
+      truncate: '&hellip;'
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: '无记录'
+          one: '共1条'
+          other: '共%{count}条记录'
+      more_pages:
+        display_entries: '第%{first}&nbsp;-&nbsp;%{last}条（共%{total}条记录）'

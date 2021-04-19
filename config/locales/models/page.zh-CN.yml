@@ -1,0 +1,14 @@
+zh-CN:
+  activerecord:
+    models:
+      page: 页面
+    attributes:
+      page:
+        content_html: 内容
+        name: 名称
+        ename: 英文名称
+        category_id: 页面分类
+        display_updated_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间

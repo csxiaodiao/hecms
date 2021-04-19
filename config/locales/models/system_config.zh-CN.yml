@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      system_config: 系统配置
+    attributes:
+      system_config:
+        site_logo: 站点 LOGO
+        site_name: 站点名称
+        slogan: 口号
+        seo_title: SEO 标题
+        keywords: 关键词
+        description: 简介
+        display_update_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间

@@ -1,0 +1,14 @@
+<tfoot>
+  <tr>
+    <th colspan=colspan>
+      <% if items.total_pages > 1 %>
+        <div class="ui right floated pagination menu">
+          <%= paginate items, window: 2, views_prefix: 'adm' %>
+        </div>
+      <%end%>
+      <a class="ui large basic button" href="#{request.url}">
+        <%= t('common.total_x_pages_y_count', x: items.total_pages, y: items.total_count) %>
+      </a>
+    <th>
+  </tr>
+<tfoot>

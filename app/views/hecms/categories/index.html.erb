@@ -1,0 +1,41 @@
+
+<% content_for :breadcrumb do%>
+  <%= link_to Hecms::Category.model_name.human, categories_path, class: "section"%>
+  <i class="right angle icon divider"></i>
+  <div class="active section"> <%= t('common.index')%> </div>
+<%end%>
+
+<% colspan = 3%>
+<table class= "ui celled striped table">
+  <thead class="single line">
+    <tr>
+      <th colspan="<%= colspan%>">
+        <%= render 'index_toolbar', search_path: request.url, new_path: new_category_path %>
+      </th>
+    </tr>
+    <tr>
+      <th class="collapsing"> ID</th>
+      <th> <%= Hecms::Category.human_attribute_name :name %></th>
+      <th> 操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |x| %>
+      <% Category.each_with_level(x.self_and_descendants) do |c, level| %>
+      <tr>
+          <td class="collapsing">
+            <%= c.id%>
+          </td>
+          <td class="collapsing">
+            <%= "#{'-' * level} #{c.name}"%>
+          </td>
+          <td class="collapsing">
+            <%= link_to t("common.update"), edit_adm_category_path(c), class: 'ui tiny button'%>
+            <%= link_to t("common.delete"), adm_category_path(c), method: 'delete', data: { confirm: t("common.are_you_sure_to_delete") }, class: ui_delete_button_class%>
+          </td>
+      </tr>
+      <%end%>
+    <%end%>
+  </tbody>
+  <%= render 'table_pagination_foot', items: @categories, colspan: colspan%>
+</table>

@@ -1,0 +1,50 @@
+= javascript_include_tag "/ckeditor/ckeditor.js"
+css:
+  .picture-form {
+    display: none;
+  }
+  a.cke_dialog_tab {
+    display: inline-block !important;
+  }
+  .cke_dialog_ui_file {
+    display: none !important;
+  }
+
+
+.picture-form
+  = form_for Picture.new, url: pictures_url, remote: true do |f|
+    = f.file_field :image
+    = f.submit "", class: 'js-picture-submit'
+
+script:
+  function checkUploadButton(selector) {
+    if ($(selector).length != 0) {
+        uploadImage(selector)
+        return
+    }
+    setTimeout(function () {
+        checkUploadButton(selector)
+    }, 1000);
+  }
+
+  function uploadImage(selector) {
+    let input_id = "#picture_image"
+    $(selector).on('click', function() {
+      let input = $(input_id)
+      input.click()
+    })
+
+    $(input_id).on('change',function() {
+      $('.js-picture-submit').click()
+    })
+  }
+
+  window.uploadPictureCallBack = function(url) {
+
+    $(".cke_dialog_tabs a.cke_dialog_tab")[0].click()  // 选中 第一个 tab
+    $($("input.cke_dialog_ui_input_text")[0]).val(url)
+  }
+
+  $(function() {
+    checkUploadButton("a.cke_dialog_ui_fileButton.cke_dialog_ui_button")
+  });

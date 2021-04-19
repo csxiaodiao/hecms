@@ -1,0 +1,8 @@
+<% content_for :breadcrumb do%>
+  <%= link_to Category.model_name.human, adm_categories_path, class: "section"%>
+  <i class="right angle icon divider"></i>
+  <div class="active section"> <%= t('common.edit')%> </div>
+<%end%>
+<%= render 'form' %>
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hecms</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "hecms/application", media: "all" %>
+  <%= javascript_include_tag "hecms/application", "data-turbolinks-track" => "reload" %>
+</head>
+
+  <body class="<%= html_body_classes%>">
+    <div class="main-header ui top fixed menu">
+      <div class="ui fluid container">
+        <div class="header-title">
+          <%= site_name %>
+        </div>
+        <div class="ui right top pointing dropdown item">
+          <%= current_user.email %>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <%= link_to '回到首页', root_path, class: 'item', target: '_blank' %>
+            <%#= link_to '修改密码', edit_password_path, class: 'item' %> 
+            <%#= link_to '退出登录', destroy_session_path, method: :delete, class: 'item' %>
+            <%#= link_to 'SIDEKIQ', auth_sidekiq_admin_path, target: '_blank', class: 'item' %>
+          </div>
+        </div>
+        <div class="left-navbar">
+          <%= link_to '首页', root_path, class: @ui_main_nav_active_home %>
+          <label>线索管理</label>
+          <label>内容管理</label>
+          <%#= link_to "文章管理", articles_path, class: @ui_main_nav_active_articles %>
+          <label>标签</label>
+          <%#= link_to "标签管理", tags_path, class: @ui_main_nav_active_tags %>
+          <label>功能管理</label>
+          <%= link_to "分类管理", categories_path, class: @ui_main_nav_active_categories %>
+          <%#= link_to "UTM数据", utms_path, class: @ui_main_nav_active_utms %>
+          <%#= link_to "锚文本列表", anchor_texts_path, class: @ui_main_nav_active_anchor_texts %>
+          <%#= link_to "友情链接管理", links_path, class: @ui_main_nav_active_links %>
+          <label>系统设置</label>
+          <%#= link_to "站点配置", system_config_path, class: @ui_main_nav_active_system_config %>
+        </div>
+        <div class="main-content">
+          <div class="ui fluid main container">
+            <% if content_for? :breadcrumb%>
+              <div class="ui large breadcrumb fluid container">
+                <%= link_to '首页', root_path, class: 'section' %>
+                <i class="right angle icon divider"></i>
+                <%= yield :breadcrumb %>
+              </div>
+            <% end %>
+            <div class="content-wrapper">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%#= render 'notice_and_alert' %>
+  </body>
+</html>

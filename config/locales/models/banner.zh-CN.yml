@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    models:
+      banner: 封面图
+    attributes:
+      banner:
+        image: PC端图片
+        mobile_image: 移动端图片
+        enabled: 开启/关闭
+        title: 标题
+        link: 链接
+        display_updated_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间

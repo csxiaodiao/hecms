@@ -1,0 +1,12 @@
+zh-CN:
+  activerecord:
+    models:
+      category_relation: 栏目关系
+    attributes:
+      category_relation:
+        category_id: 栏目分类
+        article_id: 文章
+        display_updated_at: 更新时间
+        display_created_at: 创建时间
+        created_at: 创建时间
+        updated_at: 更新时间
