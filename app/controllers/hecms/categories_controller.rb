@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_dependency 'hecms/application_controller'
 require_dependency 'hecms/base_controller'
 
 module Hecms
@@ -20,7 +19,7 @@ module Hecms
     def update
       if @category.update(form_params)
         flash[:notice] = t('common.update_success')
-        redirect_to(adm_categories_path)
+        redirect_to(categories_path)
       else
         flash[:alert] = t('common.update_fail')
         render(:edit)
@@ -32,7 +31,7 @@ module Hecms
 
       if @category.save
         flash[:notice] = t('common.create_success')
-        redirect_to(adm_categories_path)
+        redirect_to(categories_path)
       else
         flash[:alert] = t('common.create_fail')
         render(:new)

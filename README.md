@@ -14,6 +14,7 @@ gem 'hecms'
 And then execute:
 ```bash
 $ bundle
+$ bin/rails railties:install:migrations
 ```
 
 Or install it yourself as:

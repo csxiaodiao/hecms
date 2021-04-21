@@ -1,0 +1,15 @@
+<% if item.errors.any?%>
+  <div class="ui error message">
+    <div class="header">
+      = t('common.x_errors_count', x: item.errors.count)
+    </div>
+    <div class="ui clearing divider"></div>
+    <ul class="list">
+      <% item.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+      <%end%>
+    </ul>
+  </div>
+<%end%>

@@ -1,0 +1,38 @@
+
+<% content_for :breadcrumb do%>
+  <%= link_to Hecms::Tag.model_name.human, tags_path, class: "section"%>
+  <i class="right angle icon divider"></i>
+  <div class="active section"> <%= t('common.index')%> </div>
+<%end%>
+
+<% colspan = 3%>
+<table class= "ui celled striped table">
+  <thead class="single line">
+    <tr>
+      <th colspan="<%= colspan%>">
+        <%= render 'index_toolbar', search_path: request.url, new_path: new_tag_path %>
+      </th>
+    </tr>
+    <tr>
+      <th class="collapsing"> ID</th>
+      <th> <%= Hecms::Tag.human_attribute_name :name %></th>
+      <th> 操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tags.each do |x| %>
+      <tr>
+          <td class="collapsing">
+            <%= x.id%>
+          </td>
+          <td class="collapsing">
+            <%= x.name%>
+          </td>
+          <td class="collapsing">
+            <%= render('index_actions', edit: edit_tag_path(x), delete: tag_path(x)) %>
+          </td>
+      </tr>
+    <%end%>
+  </tbody>
+  <%= render 'table_pagination_foot', items: @tags, colspan: colspan%>
+</table>

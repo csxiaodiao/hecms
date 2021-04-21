@@ -1,9 +1,9 @@
 zh-CN:
   activerecord:
     models:
-      article: 文章
+      hecms/article: 文章
     attributes:
-      article:
+      hecms/article:
         tag_ids: 标签
         category_ids: 栏目分类
         title: 标题
@@ -24,7 +24,7 @@ zh-CN:
         created_at: 创建时间
         updated_at: 更新时间
 
-      article/editer_id:
+      hecms/article/editer_id:
         editer1: 喜羊羊
         editer2: 美羊羊
         editer3: 懒羊羊

@@ -1,0 +1,33 @@
+<%
+  item = @tag
+  error_class = 'error' if item.errors.count > 0
+%>
+
+<div class="ui segment form <%= error_class %>">
+  <%= render 'form_error_explanation', item: item %>
+  <%= form_for item do |f| %>
+
+    <div class="required field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="required field">
+      <%= f.label :seo_title %>
+      <%= f.text_field :seo_title %>
+    </div>
+    <div class="field">
+      <%= f.label :keywords %>
+      <%= f.text_field :keywords %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    <div class="required field">
+      <%= f.label :slug %>
+      <%= f.text_field :slug %>
+    </div>
+    <div class="ui clearing divider"></div>
+    <button class="ui primary button" type="submit"><%= t('common.save')%></button>
+  <%end%>
+</div>

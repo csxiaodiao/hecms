@@ -21,7 +21,7 @@
   </thead>
   <tbody>
     <% @categories.each do |x| %>
-      <% Category.each_with_level(x.self_and_descendants) do |c, level| %>
+      <% Hecms::Category.each_with_level(x.self_and_descendants) do |c, level| %>
       <tr>
           <td class="collapsing">
             <%= c.id%>
@@ -30,8 +30,8 @@
             <%= "#{'-' * level} #{c.name}"%>
           </td>
           <td class="collapsing">
-            <%= link_to t("common.update"), edit_adm_category_path(c), class: 'ui tiny button'%>
-            <%= link_to t("common.delete"), adm_category_path(c), method: 'delete', data: { confirm: t("common.are_you_sure_to_delete") }, class: ui_delete_button_class%>
+            <%= link_to t("common.update"), edit_category_path(c), class: 'ui tiny button'%>
+            <%= link_to t("common.delete"), category_path(c), method: 'delete', data: { confirm: t("common.are_you_sure_to_delete") }, class: ui_delete_button_class%>
           </td>
       </tr>
       <%end%>

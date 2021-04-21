@@ -19,15 +19,15 @@ module Hecms
       'Site Name'
     end
 
-    def seo_title
+    def page_seo_title
       'Seo Title'
     end
 
-    def keywords
+    def page_keywords
       'Keywords'
     end
 
-    def description
+    def page_description
       'Description'
     end
 

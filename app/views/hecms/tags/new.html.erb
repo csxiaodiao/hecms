@@ -1,0 +1,6 @@
+<% content_for :breadcrumb do%>
+  <%= link_to Hecms::Tag.model_name.human, tags_path, class: "section"%>
+  <i class="right angle icon divider"></i>
+  <div class="active section"> <%= t('common.new')%> </div>
+<%end%>
+<%= render 'form' %>

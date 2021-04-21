@@ -5,10 +5,10 @@
 
 <div class="ui segment form <%= error_class %>">
   <%= render 'form_error_explanation', item: item %>
-  <%= form_for [:adm, item] do |f| %>
+  <%= form_for item do |f| %>
     <div class="required field">
       <%= f.label :parent_id %>
-      <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, { include_blank: true }, class: "ui fluid dropdown" %>
+      <%= f.select :parent_id, nested_set_options(Hecms::Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, { include_blank: true }, class: "ui fluid dropdown" %>
     </div>
     <div class="required field">
       <%= f.label :name %>
@@ -26,7 +26,7 @@
       <%= f.label :description %>
       <%= f.text_field :description %>
     </div>
-    <div class="field">
+    <div class="required field">
       <%= f.label :slug %>
       <%= f.text_field :slug %>
     </div>

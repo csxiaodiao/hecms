@@ -1,9 +1,9 @@
 zh-CN:
   activerecord:
     models:
-      tag: 标签
+      hecms/tag: 标签
     attributes:
-      tag:
+      hecms/tag:
         category_id: 分类
         name: 标签名
         ename: 英文标签名

@@ -1,9 +1,9 @@
 zh-CN:
   activerecord:
     models:
-      category: 栏目
+      hecms/category: 栏目
     attributes:
-      category:
+      hecms/category:
         name: 栏目名
         ename: 英文名
         seo_title: SEO 标题

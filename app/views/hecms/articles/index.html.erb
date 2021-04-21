@@ -1,0 +1,46 @@
+
+
+<% content_for :breadcrumb do%>
+  <%= link_to Hecms::Article.model_name.human, articles_path, class: "section"%>
+  <i class="right angle icon divider"></i>
+  <div class="active section"> <%= t('common.index')%> </div>
+<%end%>
+
+<% colspan = 6%>
+
+
+
+
+<table class= "ui celled striped table">
+  <thead class="single line">
+    <tr>
+      <th colspan="<%= colspan%>">
+        <%= render 'index_toolbar', search_path: request.url, new_path: new_article_path %>
+      </th>
+    </tr>
+    <tr>
+      <th class="collapsing"> ID</th>
+      <th> 标题</th>
+      <th> 栏目</th>
+      <th> 标签</th>
+      <th> 发布时间</th>
+      <th> 操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |x| %>
+      <tr>
+        <td class="collapsing"> <%= x.id%> </td>
+        <td class="collapsing"> <%= link_to x.title, 'javascript:;;', title: x.title %> </td>
+        <td class="collapsing"> <%= x.category_names %> </td>
+        <td class="collapsing"> <%= x.tag_names %> </td>
+        <td class="collapsing"> <%= x.display_published_date %> </td>
+        <td class="collapsing">
+          <%= link_to t("common.update"), edit_adm_category_path(c), class: 'ui tiny button'%>
+          <%= link_to t("common.delete"), adm_category_path(c), method: 'delete', data: { confirm: t("common.are_you_sure_to_delete") }, class: ui_delete_button_class%>
+        </td>
+      </tr>
+    <%end%>
+  </tbody>
+  <%= render 'table_pagination_foot', items: @articles, colspan: colspan%>
+</table>

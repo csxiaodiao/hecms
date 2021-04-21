@@ -1,0 +1,20 @@
+<%
+  show = show
+  edit = edit
+  delete = delete
+  restore = restore
+%>
+
+
+<% if show.present? %>
+  <%= link_to t('common.show'), show, class: "ui tiny basic button" %>
+<%end%>
+<% if edit.present? %>
+  <%= link_to t('common.edit'), edit, class: "ui tiny button" %>
+<%end%>
+<% if delete.present? %>
+  <%= link_to t('common.delete'), delete, class: "ui tiny inverted red button", method: :delete, data: { confirm: t('common.are_you_sure_to_delete')} %>
+<%end%>
+<% if restore.present? %>
+  <%= link_to t('common.restore'), restore,class: "ui basic tiny green button", method: :patch, data: { confirm: t('common.are_you_sure_to_restore') } %>
+<%end%>

@@ -9,4 +9,10 @@ Hecms::Engine.routes.draw do
   root to: 'categories#index'
 
   resources :categories
+  resources :articles
+  resources :tags
+
+  resources :pictures, only: [:create]
+  resources :uploads, only: [:create]
+  resources :locales, only: [:update]
 end
