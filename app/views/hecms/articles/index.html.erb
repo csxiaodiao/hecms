@@ -36,8 +36,7 @@
         <td class="collapsing"> <%= x.tag_names %> </td>
         <td class="collapsing"> <%= x.display_published_date %> </td>
         <td class="collapsing">
-          <%= link_to t("common.update"), edit_adm_category_path(c), class: 'ui tiny button'%>
-          <%= link_to t("common.delete"), adm_category_path(c), method: 'delete', data: { confirm: t("common.are_you_sure_to_delete") }, class: ui_delete_button_class%>
+          <%= render('index_actions', edit: edit_article_path(x), delete: article_path(x)) %>
         </td>
       </tr>
     <%end%>

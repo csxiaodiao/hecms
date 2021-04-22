@@ -15,8 +15,6 @@ module Hecms
     end
 
     def new
-      # binding.pry
-
       @article = Article.new
     end
 
@@ -25,7 +23,7 @@ module Hecms
     def update
       if @article.update(form_params)
         flash[:notice] = t('common.update_success')
-        redirect_to(adm_articles_path)
+        redirect_to(articles_path)
       else
         flash[:alert] = t('common.update_fail')
         render(:new)
@@ -36,7 +34,7 @@ module Hecms
       @article = Article.new(form_params)
       if @article.save
         flash[:notice] = t('common.create_success')
-        redirect_to(adm_articles_path)
+        redirect_to(articles_path)
       else
         flash[:alert] = t('common.create_fail')
         render(:new)
@@ -46,10 +44,10 @@ module Hecms
     def destroy
       respond_to do |format|
         if @article.destroy
-          format.html { redirect_to adm_articles_path }
+          format.html { redirect_to articles_path }
           format.json { render json: { code: 1111, id: @article.id } }
         else
-          format.html { redirect_to adm_articles_path }
+          format.html { redirect_to articles_path }
           format.json { render json: { code: 0o000, id: nil } }
         end
       end

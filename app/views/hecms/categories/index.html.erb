@@ -30,8 +30,7 @@
             <%= "#{'-' * level} #{c.name}"%>
           </td>
           <td class="collapsing">
-            <%= link_to t("common.update"), edit_category_path(c), class: 'ui tiny button'%>
-            <%= link_to t("common.delete"), category_path(c), method: 'delete', data: { confirm: t("common.are_you_sure_to_delete") }, class: ui_delete_button_class%>
+            <%= render('index_actions', edit: edit_category_path(c), delete: category_path(c)) %>
           </td>
       </tr>
       <%end%>
