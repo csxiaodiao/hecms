@@ -7,6 +7,8 @@ module Hecms
 
     has_one_attached :image
 
+    acts_as_tenant(:user)
+
     has_many :category_relations, as: :record, inverse_of: :record
     has_many :categories, through: :category_relations, class_name: 'Category'
 
@@ -36,6 +38,10 @@ module Hecms
 
     def display_published_date
       I18n.l(published_date, format: '%Y-%m-%d %H:%M:%S')
+    end
+
+    def image_thumb_url(process)
+      image.service_url(params: { 'x-oss-process' => process })
     end
   end
 end

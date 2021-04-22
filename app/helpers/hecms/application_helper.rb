@@ -76,15 +76,15 @@ module Hecms
     end
 
     def title_tag
-      @page_title.present? ? content_tag(:title, "#{site_name}_#{@page_title}") : content_tag(:title, "#{site_name}_#{seo_title}")
+      @page_title.present? ? content_tag(:title, "#{site_name}_#{@page_title}") : content_tag(:title, "#{site_name}_#{page_seo_title}")
     end
 
     def keywords_tag
-      @page_keywords.present? ? @page_keywords : keywords
+      @page_keywords.present? ? @page_keywords : page_keywords
     end
 
     def description_tag
-      @page_description.present? ? @page_description : description
+      @page_description.present? ? @page_description : page_description
     end
   end
 end

@@ -3,6 +3,7 @@
 class CreateHecmsArticles < ActiveRecord::Migration[6.1]
   def change
     create_table :hecms_articles do |t|
+      t.references :user_id, null: false, comment: 'user'
       t.string(:title, null: false, comment: '标题')
       t.string(:seo_title, comment: 'SEO标题')
       t.string(:keywords, comment: '关键词')
@@ -18,6 +19,8 @@ class CreateHecmsArticles < ActiveRecord::Migration[6.1]
       t.timestamps
     end
     add_index(:hecms_articles, :top)
+    add_index(:hecms_articles, :user_id)
     add_index(:hecms_articles, :slug, unique: true)
+    add_foreign_key :hecms_articles, :hecms_users, column: :user_id
   end
 end

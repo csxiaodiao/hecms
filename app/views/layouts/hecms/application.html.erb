@@ -20,7 +20,7 @@
           <div class="menu">
             <%= link_to '回到首页', root_path, class: 'item', target: '_blank' %>
             <%#= link_to '修改密码', edit_password_path, class: 'item' %> 
-            <%#= link_to '退出登录', destroy_session_path, method: :delete, class: 'item' %>
+            <%= link_to '退出登录', destroy_user_session_path, method: :delete, class: 'item' %>
             <%#= link_to 'SIDEKIQ', auth_sidekiq_admin_path, target: '_blank', class: 'item' %>
           </div>
         </div>
