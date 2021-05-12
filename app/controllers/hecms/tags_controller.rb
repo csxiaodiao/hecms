@@ -8,6 +8,7 @@ module Hecms
 
     def index
       @tags = Tag.keyword_like(params[:keyword]).order(id: :desc).page(params[:page])
+      # html = render_to_string action: :index, layout: false, formats: [:html]
     end
 
     def new

@@ -5,6 +5,7 @@ module Hecms
     extend FriendlyId
 
     has_many :tag_relations
+    has_many :articles, through: :tag_relations, source: :record, source_type: 'Article'
 
     accepts_nested_attributes_for :tag_relations, reject_if: :all_blank, allow_destroy: true
 
